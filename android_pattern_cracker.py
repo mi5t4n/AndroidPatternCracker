@@ -16,7 +16,7 @@ def mode_crack_generate(words_hex, words_ascii, args):
 		fp_pattern.close()
 		print("[+] Closed pattern file (" + args.file + ")")
 	elif (args.mode == 'crack' and args.file == None and args.hash != None):
-		pattern_hex = args.hash
+		pattern_hex_str = args.hash
 		print ("[+] Pattern = " + args.hash)
 	elif (args.mode == 'crack'):
 		print("[!] Error : Use either --file or --hash parameter. Do not use both at the same time.")
