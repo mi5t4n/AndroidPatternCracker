@@ -7,7 +7,7 @@ def write():
 
 def mode_crack_generate(words_hex, words_ascii, args):
 
-	if (args.mode == 'crack' and args.file != None and args.hex == None):
+	if (args.mode == 'crack' and args.file != None and args.hash == None):
 		print("[+] Opening pattern file (" + args.file + ") to read.")
 		fp_pattern = open(args.file, "rb");
 		pattern_hex = fp_pattern.read();
@@ -15,11 +15,11 @@ def mode_crack_generate(words_hex, words_ascii, args):
 		print ("[+] Pattern = " + pattern_hex_str)
 		fp_pattern.close()
 		print("[+] Closed pattern file (" + args.file + ")")
-	elif (args.mode == 'crack' and args.file == None and args.hex != None):
-		pattern_hex = args.hex
-		print ("[+] Pattern = " + args.hex)
+	elif (args.mode == 'crack' and args.file == None and args.hash != None):
+		pattern_hex = args.hash
+		print ("[+] Pattern = " + args.hash)
 	elif (args.mode == 'crack'):
-		print("[!] Error : Use either --file or --hex parameter. Do not use both at the same time.")
+		print("[!] Error : Use either --file or --hash parameter. Do not use both at the same time.")
 		return
 
 	if (args.write != None):	
@@ -77,7 +77,7 @@ if __name__ == '__main__' :
 	parser.add_argument('--mode', type = str, help = 'Select mode (mode = crack/generate)', choices = ['crack','generate'], required = True)
 	parser.add_argument('--length', type  = int, choices= [4,5,6,7,8,9], help = 'Length of the pattern', default = 0)
 	parser.add_argument('--file', type = str, help = 'Name of the pattern file.')
-	parser.add_argument('--hex', type = str, help = 'HEX values of the pattern.')
+	parser.add_argument('--hash', type = str, help = 'SHA1 hash of the pattern.')
 	parser.add_argument('--write', type = str, default = 'output', help='In crack mode, outputs the pin to the file. In generate mode, ouput the sqlite database.')
 	parser.add_argument('--verbose', action ='store_true')
 	args = parser.parse_args()
