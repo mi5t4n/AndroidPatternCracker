@@ -33,10 +33,11 @@ For example: if the pattern is 0 -> 4 -> 8 -> 5 -> 2. The SHA1 hash will be SHA1
 
 # Where can I find the hash?
 The SHA1 hash of the pattern is stored in /data/system/gesture.key Y You can fetch the file using adb tool found in the Android SDK. Follow the following steps to fetch the gesture.key file.
-    1. Enable developer mode and debugging
-    2. Connect your phone to your computer.
-    3. Use adb tool found in the platform-tools in Android SDK.
-    Note: You must have root access to your phone.
+   1. Enable developer mode and debugging
+   2. Connect your phone to your computer.
+   3. Use adb tool found in the platform-tools in Android SDK.
+   Note: You must have root access to your phone.
+
 
     pc@user:~/android-sdk-linux/platform-tools$ ./adb pull /data/system/gesture.key .
     /data/system/gesture.key: 1 file pulled. 0.0 MB/s (20 bytes in 0.083s)
